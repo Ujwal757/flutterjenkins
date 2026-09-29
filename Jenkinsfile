@@ -18,13 +18,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'flutter build apk --release'
+                bat 'flutter build web'
             }
         }
 
-        stage('Archive APK') {
+        stage('Archive Web Build') {
             steps {
-                archiveArtifacts artifacts: 'build\\app\\outputs\\flutter-apk\\app-release.apk',
+                archiveArtifacts artifacts: 'build\\web\\**',
                                  fingerprint: true
             }
         }
