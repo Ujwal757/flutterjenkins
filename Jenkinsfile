@@ -5,6 +5,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                bat 'git config --global --add safe.directory C:/src/flutter'
                 bat 'flutter pub get'
             }
         }
